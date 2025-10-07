@@ -53,6 +53,9 @@ california_counties <- aggregate(
 
 
 ### Visualize data 
+The folowing variables where used to create the two maps:
+- P_D2_RSEI_AIR - Percentile for Toxic Releases to Air EJ Index
+- P_D2_CANCER - Percentile for  Air toxics cancer risk EJ Index
 
 ## Map one displays the precentile for Toxic Release to Air EJ Index in LA County.
 ```{r}
@@ -90,6 +93,14 @@ tm_title("Where the Air is Most Toxic: Cancer Risk Across LA County", size = 1) 
   tm_layout(component.autoscale = FALSE, frame.double_line = TRUE)
 
 ```
+
+### Map Interpretation
+
+The firs map illustrates the percentile of toxic air releases across Los Angeles County. Areas with higher percentiles indicate block groups experiencing greater potential exposure to air toxins.
+
+The second map shows air toxic cancer risk percentiles, highlighting communities potentially more affected by long-term exposure to hazardous air pollutants.
+
+Together, these maps reveal environmental justice patterns: communities with higher exposure to toxic releases also tend to face higher cancer risk, underscoring disparities in environmental burden across Los Angeles County.
 
 ### Data Citations 
 United States Environmental Protection Agency. 2015. EJSCREEN. Retrieved: October, 06, 2025, from url(www.epa.gov/ejscreen) 

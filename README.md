@@ -2,27 +2,36 @@
 
 Geospatial Analysis & Remote Sensing (EDS223) Homework Assignment 1:
 
-For this assignment the data used comes from the United States Environmental Protection Agency's previous [EJScreen: Environmental Justice Screen and Mapping Tool](https://www.epa.gov/ejscreen). A tool intended to support research and policy goals.The tool is no longer available but an unofficial version of the tool can be found [here](https://pedp-ejscreen.azurewebsites.net/).
-
-The EJScreen provides demorgaphic and environment information for the US at the Cesus tract and block group level. The data of focus for this assignment will come from the block group level dowloaded from the [EPA site](https://www.epa.gov/ejscreen/download-ejscreen-data)
+This repsoitory contains the code and data used to create geospatial maps for Homework Assignment 1 in EDS 223. THe assignment focuses on visualizing environmental justice data using R, including creating multilayer maps and practicing the `tmap` package.
 
 #### Learning outcomes 
-- Create two maps effectively, accessible and aesthetically-pleasing. 
-- Practice building multi-layer maps by altering vector and raster data. 
-- Practice the `tmap` package in R to make maps.
+- Create an  accessible and aesthetically-pleasing maps that illustrate environmental and demographic data across the Untied States. This includes practicing multi-layer mapping techniques and working with a vector and raster geospatial data in R. 
 
 #### The following files are housed in this repository: 
 - README.md 
-- ej_screen.qmd 
-- ej_screen.pdf 
+- ej_screen.qmd - Quarto file contain code and map generated workflow
+- ej_screen.pdf - rendered PDF output of the assignmet 
 - Rmd/Proj files 
-- data 
-  - ejscreen
+- data - folder contain raw processed dta
+  - ejscreen - block group-level EJScreen data 
+  
+#### Data Access
 
-The following packages where installed to complete this assignment
+The data used in this assignment comes from the United States Environmental Protection Agency’s EJScreen: Environmental Justice Screening and Mapping Tool:
+
+- The original tool is no longer available, but an unofficial version exists [here](https://pedp-ejscreen.azurewebsites.net/)
+
+Note: The repository contains only a subset of block group-level data used for the assignment.
+
+#### Installation & Dependencies
+
+The following R packages where installed to complete this assignment
 
 ```         
 - install.packages("sf")
 - install.packages("stars")
 - install.packages("tmap")
 ```
+#### Data Citations
+
+United States Environmental Protection Agency. 2015. EJSCREEN. Retrieved: October, 06, 2025, from [HERE](www.epa.gov/ejscreen) 

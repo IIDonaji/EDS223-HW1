@@ -92,4 +92,4 @@ tm_title("Where the Air is Most Toxic: Cancer Risk Across LA County", size = 1) 
 ```
 
 ### Data Citations 
-United States Environmental Protection Agency. 2015. EJSCREEN. Retrieved: October, 06, 2025, from [HERE](www.epa.gov/ejscreen) 
+United States Environmental Protection Agency. 2015. EJSCREEN. Retrieved: October, 06, 2025, from url(www.epa.gov/ejscreen) 

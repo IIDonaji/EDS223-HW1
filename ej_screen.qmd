@@ -4,6 +4,8 @@ author: "Ixel"
 date: "10/06/2025"
 format: 
   pdf:
+    papersize: letter
+    geometry: margin=1in
     code-fold: false
     toc: true
     number-sections: true
@@ -57,12 +59,15 @@ california_counties <- aggregate(
 # Map one
 tm_shape(Los_Angeles) +
   tm_graticules() +
-  tm_polygons("P_D2_RSEI_AIR", fill.legend = tm_legend(title = "Toxic Release to Air EJ Index Precential (%)"), fill.scale = tm_scale(values = c("yellow", "darkgreen"))) +
-tm_compass(type = "4star", size = 2, position = c("RIGHT", "bottom")) +
+  tm_polygons("P_D2_RSEI_AIR", 
+              fill.legend = tm_legend("Toxic Release to Air\n EJ Index Precentile (%)"), 
+              fill.scale = tm_scale(values = c("yellow", "darkgreen"))) +
   
-tm_scalebar(position = c("RIGHT", "bottom")) +
+tm_compass(type = "4star", size = 1, position = c(-0, 0.3)) +
   
-tm_title("Precential of Toxic Release across LA county", size = 1) +   
+tm_scalebar(position = c(0.5,0)) +
+  
+tm_title("Precentile of Toxic Release across LA county", size = 1) +   
   tm_layout(component.autoscale = FALSE, frame.double_line = TRUE)
 
 ```
@@ -75,50 +80,16 @@ tm_shape(Los_Angeles) +
   tm_graticules() +
   tm_polygons(fill = "P_D2_CANCER",
              fill.scale = tm_scale(values = c("purple", "darkblue")), 
-             fill.legend = tm_legend(title = "Presence of Cancer Risk Precential (%)")) +
+             fill.legend = tm_legend(title = "Presence of Cancer Risk \n Precentile (%)")) +
 
-tm_compass(type = "4star", size = 2, position = c("RIGHT", "bottom")) +
+tm_compass(type = "4star", size = 1, position = c(-0, 0.3)) +
   
-tm_scalebar(position = c("RIGHT", "bottom")) +
+tm_scalebar(position = c(0.5,0)) +
   
 tm_title("Where the Air is Most Toxic: Cancer Risk Across LA County", size = 1) +   
   tm_layout(component.autoscale = FALSE, frame.double_line = TRUE)
 
 ```
-### Map made for fun to explore relationships of air toxin release, cancer risk and demographics.
-The following map is just looking at the variables above within California in regards to People of color in each county 
-
-
-```{r}
-tm_shape(california_counties) +
-  tm_graticules() +
-  tm_polygons(fill = "PEOPCOLORPCT", 
-              fill.legend = tm_legend("Precentage (%) People of Color"),
-              fill.scale = tm_scale(values = c("yellow", "darkgreen"))) +
-  
-tm_shape(california_counties) +
-  tm_symbols("P_D2_RSEI_AIR", shape = 22, 
-             size.legend = tm_legend("Toxic Release to Air EJ Index Precential (%)")) +
-  
-  #tm_dots() +
-  tm_text(text = "Group.1", size = 0.5) +
-  
-  tm_shape(california_counties) +
-  tm_symbols(fill = "P_D2_CANCER", size = 0.5, 
-             fill.scale = tm_scale(values = c("purple", "darkblue")), 
-             fill.legend = tm_legend("Presence of Cancer Risk Precential")) + 
-  
-  tm_compass(type = "4star", size = 2, position = c("right", "top")) +
-  
-  tm_scalebar(position = c("left", "bottom")) +
-  
-  tm_title("Where the Air is Most Toxic: In relation to people of color", 
-           size = 1) +   
-  tm_layout(component.autoscale = FALSE) # to avoid auto scaling to graph. 
-
-```
-
-
 
 ### Data Citations 
-[Here is the tool](https://pedp-ejscreen.azurewebsites.net/) 
+United States Environmental Protection Agency. 2015. EJSCREEN. Retrieved: October, 06, 2025, from [HERE](www.epa.gov/ejscreen) 

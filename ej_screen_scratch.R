@@ -73,6 +73,34 @@ tm_shape(california_counties) +
   
   tm_compass(type = "4star", size = 2, position = c("right", "top")) +
   
+  tm_scalebar(position = c("left", "bottom")) 
+
+# Map1 
+tm_shape(california_counties) +
+  tm_graticules() +
+  tm_polygons(fill = "PEOPCOLORPCT", 
+              fill.legend = tm_legend("Precentage (%) People of Color"),
+              fill.scale = tm_scale(values = c("yellow", "darkgreen"))) +
+  
+  tm_shape(california_counties) +
+  tm_symbols("P_D2_RSEI_AIR", shape = 22, 
+             size.legend = tm_legend("Toxic Release to Air\nEJ Index Precentile (%)")) +
+  
+  #tm_dots() +
+  tm_text(text = "Group.1", size = 0.5) +
+  
+  tm_shape(california_counties) +
+  tm_symbols(fill = "P_D2_CANCER", size = 0.5, 
+             fill.scale = tm_scale(values = c("purple", "darkblue")), 
+             
+             fill.legend = tm_legend("Presence of Cancer Risk Precentile")) + 
+  
+  tm_compass(type = "4star", size = 2, position = c("right", "top")) +
+  
   tm_scalebar(position = c("left", "bottom")) +
+  
+  tm_title("Where the Air is Most Toxic: In relation to people of color", 
+           size = 1) +   
+  tm_layout(component.autoscale = TRUE, frame = TRUE) # to avoid auto scaling to graph.
   
 

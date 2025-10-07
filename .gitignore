@@ -51,3 +51,6 @@ rsconnect/
 
 ## Ignore Homeowrk 1 dataset
 data/*
+ej_screen_files/*
+ej_screen.qmd
+ej_screen.html
